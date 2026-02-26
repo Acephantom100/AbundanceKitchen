@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Dignified charity palette - warm white with light blue accent */
+    --background: 40 25% 95%; /* #F6F3EE warm off-white */
+    --foreground: 0 0% 12%; /* #1F1F1F near-black */
+
+    --card: 0 0% 100%; /* #FFFFFF pure white */
+    --card-foreground: 0 0% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 12%;
+
+    /* Light blue accent - trust & hope */
+    --primary: 200 70% 50%; /* Calming light blue */
+    --primary-foreground: 0 0% 100%;
+
+    /* Soft linen for alternating sections */
+    --secondary: 38 22% 91%; /* #EEE9E2 */
+    --secondary-foreground: 0 0% 12%;
+
+    /* Warm charcoal for muted text */
+    --muted: 38 22% 91%;
+    --muted-foreground: 0 0% 29%; /* #4B4B4B */
+
+    /* Accent same as primary for consistency */
+    --accent: 200 70% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Warm borders */
+    --border: 38 12% 81%; /* #D6D1C8 */
+    --input: 38 12% 81%;
+    --ring: 200 70% 50%;
+
+    --radius: 0.5rem;
+
+    /* Custom tokens */
+    --sky: 200 70% 50%;
+    --sky-light: 200 65% 60%;
+    --warm-white: 40 25% 95%;
+    --linen: 38 22% 91%;
+    --charcoal: 0 0% 29%;
+    --near-black: 0 0% 12%;
+    --warm-border: 38 12% 81%;
+    
+    /* Minimal shadows */
+    --shadow-soft: 0 2px 12px -2px hsl(0 0% 12% / 0.06);
+    --shadow-card: 0 4px 20px -4px hsl(0 0% 12% / 0.08);
+    --shadow-hover: 0 8px 30px -8px hsl(0 0% 12% / 0.12);
+
+    --sidebar-background: 40 25% 95%;
+    --sidebar-foreground: 0 0% 12%;
+    --sidebar-primary: 200 70% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 38 22% 91%;
+    --sidebar-accent-foreground: 0 0% 12%;
+    --sidebar-border: 38 12% 81%;
+    --sidebar-ring: 200 70% 50%;
+  }
+
+  .dark {
+    --background: 0 0% 8%;
+    --foreground: 40 25% 95%;
+    --card: 0 0% 12%;
+    --card-foreground: 40 25% 95%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 40 25% 95%;
+    --primary: 200 65% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 40 25% 95%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 200 65% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 200 65% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
