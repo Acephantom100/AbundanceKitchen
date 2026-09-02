@@ -61,7 +61,7 @@ const CallToAction = () => {
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
           <a
-            href="mailto:sfgclemennt@gmail.com?subject=Partnership Inquiry"
+            href="mailto:alwynjosephp@gmail.com?subject=Partnership Inquiry"
             className="inline-flex items-center justify-center gap-3 px-8 py-4 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-foreground transition-colors"
           >
             <Users className="w-5 h-5" />
@@ -76,9 +76,9 @@ const CallToAction = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="flex flex-wrap justify-center gap-8 pt-8 border-t border-white/20"
         >
-          <a href="mailto:sfgclemennt@gmail.com" className="flex items-center gap-2 text-white/70 hover:text-primary transition-colors">
+          <a href="mailto:alwynjosephp@gmail.com" className="flex items-center gap-2 text-white/70 hover:text-primary transition-colors">
             <Mail className="w-4 h-4" />
-            sfgclemennt@gmail.com
+            alwynjosephp@gmail.com
           </a>
           <a href="tel:+919884662222" className="flex items-center gap-2 text-white/70 hover:text-primary transition-colors">
             <Phone className="w-4 h-4" />
