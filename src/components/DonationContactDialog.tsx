@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
 const email = "alwynjosephp@gmail.com";
-const subject = encodeURIComponent("Abundance Kitchen donation enquiry");
-
-export default function DonationContactDialog() {
+export default function DonationContactDialog({ purpose = "donation" }: { purpose?: "donation" | "transparency" }) {
+  const transparency = purpose === "transparency";
+  const subject = encodeURIComponent(`Abundance Kitchen ${purpose} enquiry`);
   const [message, setMessage] = useState("");
 
   async function copyEmail() {
@@ -19,11 +19,14 @@ export default function DonationContactDialog() {
   }
 
   return <Dialog onOpenChange={() => setMessage("")}>
-    <DialogTrigger asChild><Button variant="outline" size="lg"><Mail aria-hidden="true" /> Ask about donating <ArrowUpRight aria-hidden="true" /></Button></DialogTrigger>
+    <DialogTrigger asChild>{transparency
+      ? <button type="button" className="text-link">Ask the team <ArrowUpRight size={16} aria-hidden="true" /></button>
+      : <Button variant="outline" size="lg"><Mail aria-hidden="true" /> Ask about donating <ArrowUpRight aria-hidden="true" /></Button>}
+    </DialogTrigger>
     <DialogContent className="donation-contact">
       <DialogHeader className="text-left space-y-3">
-        <DialogTitle>Talk to Alwyn about donating</DialogTitle>
-        <DialogDescription className="text-lg leading-relaxed">Ask about bank details, receipts, or how your support can help.</DialogDescription>
+        <DialogTitle>{transparency ? "Ask the Abundance Kitchen team" : "Talk to Alwyn about donating"}</DialogTitle>
+        <DialogDescription className="text-lg leading-relaxed">{transparency ? "Contact Alwyn about the organization’s registration, documentation, or how donations are used." : "Ask about bank details, receipts, or how your support can help."}</DialogDescription>
       </DialogHeader>
       <div className="contact-email">
         <strong>{email}</strong>

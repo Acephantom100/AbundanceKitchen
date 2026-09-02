@@ -3,6 +3,7 @@ import { ArrowUpRight, HeartHandshake, MapPin, Utensils, Shirt, GraduationCap } 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BankDetailsSection from "@/components/BankDetailsSection";
+import DonationContactDialog from "@/components/DonationContactDialog";
 import { Button } from "@/components/ui/button";
 import community from "@/assets/community-help.jpeg";
 import food from "@/assets/food-distribution.jpeg";
@@ -54,7 +55,7 @@ export default function Index() {
           <div><strong>3,000+</strong><h3>Monthly grocery kits</h3><p>Coordinated during the COVID-19 relief effort—not a statement of current monthly volume.</p></div>
           <div><strong>3</strong><h3>Connected areas of care</h3><p>Food, clothing, and education, with volunteers at the heart of the work.</p></div>
         </div>
-        <div className="transparency-note" id="transparency"><HeartHandshake aria-hidden="true" /><div><h3>Trust starts with clear answers.</h3><p>Want to understand a donation, the organization’s registration, or how support is used? Contact the team before giving. Public financial reports and registration documents are not yet available on this site.</p><a className="text-link" href="mailto:alwynjosephp@gmail.com?subject=Abundance%20Kitchen%20transparency%20enquiry">Ask the team <ArrowUpRight size={16} aria-hidden="true" /></a></div></div>
+        <div className="transparency-note" id="transparency"><HeartHandshake aria-hidden="true" /><div><h3>Trust starts with clear answers.</h3><p>Want to understand a donation, the organization’s registration, or how support is used? Contact the team before giving. Public financial reports and registration documents are not yet available on this site.</p><DonationContactDialog purpose="transparency" /></div></div>
       </section>
       <section id="about" className="team-section site-section"><div className="site-container">
         <div className="section-heading"><div><h2>A shared commitment.<br />A personal responsibility.</h2></div><p>Abundance Kitchen was founded by Alwyn Joseph and Clement Barnabas, building on years of community service together.</p></div>

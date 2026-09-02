@@ -19,3 +19,13 @@ test("donation enquiry opens an accessible contact dialog, not only a mail app",
   assert.ok(dialog.includes("mailto:${email}?subject=${subject}"));
   assert.ok(dialog.includes('rel="noopener noreferrer"'));
 });
+
+test("Ask the team uses the shared contact dialog with a transparency subject", () => {
+  const page = read("src/pages/Index.tsx");
+  const dialog = read("src/components/DonationContactDialog.tsx");
+  assert.ok(page.includes('<DonationContactDialog purpose="transparency" />'));
+  assert.ok(!page.includes('href="mailto:'));
+  assert.ok(dialog.includes('purpose = "donation"'));
+  assert.ok(dialog.includes('Abundance Kitchen ${purpose} enquiry'));
+  assert.ok(dialog.includes('className="text-link">Ask the team'));
+});
